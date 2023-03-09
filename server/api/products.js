@@ -1,19 +1,20 @@
-const router = require('express').Router();
-const { Product, User } = require('../db/index');
-const { requireToken, isAdmin } = require('../middleware');
+const router = require("express").Router();
+const { Product, User } = require("../db/index");
+const { requireToken, isAdmin } = require("../middleware");
 
 // GET /api.products
-router.get('/', async (req, res, next) => {
+router.get("/", async (req, res, next) => {
   try {
-    const products = await Product.findAll();
-    res.json(products);
+    // const products = await Product.findAll();
+    // res.json(products);
+    res.json({ user: "Kevin" });
   } catch (err) {
     next(err);
   }
 });
 
 //  GET /api/products/:id
-router.get('/:id', async (req, res, next) => {
+router.get("/:id", async (req, res, next) => {
   try {
     const product = await Product.findByPk(req.params.id);
     res.json(product);
@@ -23,7 +24,7 @@ router.get('/:id', async (req, res, next) => {
 });
 
 // POST api/products
-router.post('/', requireToken, isAdmin, async (req, res, next) => {
+router.post("/", requireToken, isAdmin, async (req, res, next) => {
   try {
     res.status(201).send(await Product.create(req.body));
   } catch (error) {
@@ -32,7 +33,7 @@ router.post('/', requireToken, isAdmin, async (req, res, next) => {
 });
 
 // DELETE api/products/:id
-router.delete('/:id', requireToken, isAdmin, async (req, res, next) => {
+router.delete("/:id", requireToken, isAdmin, async (req, res, next) => {
   try {
     const product = await Product.findByPk(req.params.id);
     await product.destroy();
@@ -43,7 +44,7 @@ router.delete('/:id', requireToken, isAdmin, async (req, res, next) => {
 });
 
 // UPDATE /api/products/:id
-router.put('/:id', requireToken, isAdmin, async (req, res, next) => {
+router.put("/:id", requireToken, isAdmin, async (req, res, next) => {
   try {
     const product = await Product.findByPk(req.params.id);
     res.send(await product.update(req.body));
