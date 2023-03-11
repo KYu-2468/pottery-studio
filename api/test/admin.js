@@ -1,16 +1,16 @@
-const router = require('express').Router();
-const { User } = require('../db/index');
-const { requireToken, isAdmin } = require('../middleware');
+const router = require("express").Router();
+const { User } = require("../db/index");
+const { requireToken, isAdmin } = require("../middleware");
 
 // GET /api/admin/users
-router.get('/users', requireToken, isAdmin, async (req, res, next) => {
-  try {
-    const users = await User.findAll();
-    res.json(users);
-  } catch (err) {
-    next(err);
-  }
-});
+// router.get('/users', requireToken, isAdmin, async (req, res, next) => {
+//   try {
+//     const users = await User.findAll();
+//     res.json(users);
+//   } catch (err) {
+//     next(err);
+//   }
+// });
 
 // router.post('/', async (req, res, next) => {
 //   try {
