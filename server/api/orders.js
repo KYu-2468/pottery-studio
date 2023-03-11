@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const { Cart, CartProduct } = require("../api/db/index");
+const { Cart, CartProduct } = require("../db/index");
 
-const { requireToken } = require("../api/middleware");
+const { requireToken } = require("../middleware");
 
 router.get("/", requireToken, async (req, res, next) => {
   try {
