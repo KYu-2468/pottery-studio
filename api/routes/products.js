@@ -1,9 +1,20 @@
-const router = require("express").Router();
+// const router = require("express").Router();
+const app = require("express")();
 // const { Product, User } = require("../../db/index");
 // const { requireToken, isAdmin } = require("../middleware");
 
 // GET /api.products
-router.get("/", async (req, res, next) => {
+// router.get("/", async (req, res, next) => {
+//   try {
+//     // const products = await Product.findAll();
+//     // res.json(products);
+//     res.json({ user: "Kevin" });
+//   } catch (err) {
+//     next(err);
+//   }
+// });
+
+app.get("/", async (req, res, next) => {
   try {
     // const products = await Product.findAll();
     // res.json(products);
@@ -13,7 +24,7 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.get("/:id", async (req, res, next) => {
+app.get("/:id", async (req, res, next) => {
   try {
     // const products = await Product.findAll();
     // res.json(products);
@@ -63,4 +74,4 @@ router.get("/:id", async (req, res, next) => {
 //   }
 // });
 
-module.exports = router;
+module.exports = app;
