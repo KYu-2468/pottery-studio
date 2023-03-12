@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User } = require("../db/index");
-const { requireToken, isAdmin } = require("../middleware");
+const { requireToken, isAdmin } = require("./middleware");
 
 // GET /api/admin/users
 router.get("/users", requireToken, isAdmin, async (req, res, next) => {

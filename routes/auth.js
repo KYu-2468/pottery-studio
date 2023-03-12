@@ -1,7 +1,7 @@
 const router = require("express").Router();
 
 const { User, CartProduct, Cart } = require("../../db/index");
-const { requireToken } = require("../middleware");
+const { requireToken } = require("./middleware");
 
 //auth post -- signing in, creating a session
 router.post("/login", async (req, res, next) => {
