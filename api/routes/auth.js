@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const { User, CartProduct, Cart } = require("../db/index");
+const { User, CartProduct, Cart } = require("../../db/index");
 const { requireToken } = require("./middleware");
 
 //auth post -- signing in, creating a session

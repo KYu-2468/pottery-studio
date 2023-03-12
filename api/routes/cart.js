@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Cart, CartProduct } = require("../db/index");
+const { Cart, CartProduct } = require("../../db/index");
 
 const { requireToken } = require("./middleware");
 
