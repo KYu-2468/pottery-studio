@@ -1,8 +1,8 @@
 require("dotenv").config();
 
-const { db } = require("./db");
+const { db } = require("../db");
 const PORT = process.env.PORT || 8080;
-const app = require("./app");
+const app = require(".");
 // const seed = require('../seed');
 
 const init = async () => {

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, CartProduct } = require("../db/index");
+const { User, CartProduct } = require("../../db/index");
 
 //creates a guest user
 router.post("/", async (req, res, next) => {
