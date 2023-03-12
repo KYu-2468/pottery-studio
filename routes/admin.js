@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../db/index");
+const { User } = require("../db/index");
 const { requireToken, isAdmin } = require("../middleware");
 
 // GET /api/admin/users
