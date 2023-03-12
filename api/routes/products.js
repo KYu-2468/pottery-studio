@@ -1,5 +1,5 @@
-// const router = require("express").Router();
-const app = require("express")();
+const router = require("express").Router();
+// const app = require("express")();
 // const { Product, User } = require("../../db/index");
 // const { requireToken, isAdmin } = require("../middleware");
 
@@ -14,7 +14,7 @@ const app = require("express")();
 //   }
 // });
 
-app.get("/", async (req, res, next) => {
+router.get("/", async (req, res, next) => {
   try {
     // const products = await Product.findAll();
     // res.json(products);
@@ -24,7 +24,7 @@ app.get("/", async (req, res, next) => {
   }
 });
 
-app.get("/:id", async (req, res, next) => {
+router.get("/:id", async (req, res, next) => {
   try {
     // const products = await Product.findAll();
     // res.json(products);
@@ -74,4 +74,4 @@ app.get("/:id", async (req, res, next) => {
 //   }
 // });
 
-module.exports = app;
+module.exports = router;
